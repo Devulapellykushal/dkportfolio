@@ -6,11 +6,14 @@ export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink py-10 text-sm text-muted">
       <div className="container-narrow flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="font-display text-lg text-snow">
-            {SITE.brand} <span className="text-gold">·</span> {SITE.tagline}
-          </p>
-          <p className="mt-1">{SITE.city}, India</p>
+        <div className="flex items-center gap-4">
+          <img src="/Kalakruthilogo.png" alt={`${SITE.brand} logo`} className="h-20 w-auto" />
+          <div>
+            <p className="font-display text-lg text-snow">
+              {SITE.brand} <span className="text-gold">·</span> {SITE.tagline}
+            </p>
+            <p className="mt-1">{SITE.city}, India</p>
+          </div>
         </div>
         <div className="flex flex-wrap gap-4">
           <a href={telHref()} className="hover:text-gold">

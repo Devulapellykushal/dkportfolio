@@ -13,8 +13,8 @@ export const GALLERY: GalleryItem[] = [
     tag: "Babies",
   },
   {
-    src: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80&auto=format&fit=crop",
-    alt: "Family together — love and connection",
+    src: "/Kalakruthilogo.png",
+    alt: "Kalakruthi brand logo",
     tag: "Families",
   },
   {

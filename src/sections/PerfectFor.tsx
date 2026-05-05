@@ -38,9 +38,12 @@ export function PerfectFor() {
             {items.map((i) => (
               <article
                 key={i.title}
-                className="group rounded-2xl border border-white/10 bg-inkSoft/40 p-6 shadow-card transition hover:border-gold/35 hover:shadow-glow"
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-inkSoft/40 p-6 shadow-card transition hover:border-gold/35 hover:shadow-glow"
               >
-                <div className="text-3xl transition group-hover:scale-110" aria-hidden>
+                <div
+                  className="inline-flex text-3xl leading-none transition-transform duration-300 group-hover:scale-110"
+                  aria-hidden
+                >
                   {i.emoji}
                 </div>
                 <h3 className="mt-4 font-display text-xl text-snow">{i.title}</h3>
