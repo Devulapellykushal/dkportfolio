@@ -1,0 +1,40 @@
+@import "./theme/design-tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-snow font-sans antialiased;
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+}
+
+@layer utilities {
+  .container-narrow {
+    width: min(100% - 2rem, var(--container-max));
+    margin-inline: auto;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--duration-mid) var(--ease-out-expo),
+      transform var(--duration-mid) var(--ease-out-expo);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

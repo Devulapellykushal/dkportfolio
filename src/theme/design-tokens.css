@@ -1,0 +1,75 @@
+/**
+ * Kalakruthi — single source of truth for colors, typography, radii, shadows, motion.
+ * Tailwind maps these via tailwind.config.js; edit here only.
+ */
+:root {
+  /* ——— Colors ——— */
+  --color-ink: #0f0f0f;
+  --color-ink-elevated: #161616;
+  --color-ink-soft: #1c1c1c;
+  --color-gold: #ffd700;
+  --color-gold-muted: #c9a227;
+  --color-gold-deep: #8a6d12;
+  --color-snow: #ffffff;
+  --color-mist: #e8e8e8;
+  --color-muted: #a3a3a3;
+
+  /* ——— Typography (font families loaded in index.html) ——— */
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+
+  /* ——— Layout ——— */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --container-max: 72rem;
+  --section-y: clamp(3.5rem, 8vw, 6rem);
+
+  /* ——— Shadows & glow ——— */
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 24px rgba(255, 215, 0, 0.22);
+  --shadow-glow-lg: 0 0 48px rgba(255, 215, 0, 0.18);
+
+  /* ——— Gradients ——— */
+  --gradient-gold-shine: linear-gradient(
+    120deg,
+    #ffd700 0%,
+    #fff4bf 45%,
+    #c9a227 100%
+  );
+  --gradient-hero-overlay: linear-gradient(
+    180deg,
+    rgba(15, 15, 15, 0.15) 0%,
+    rgba(15, 15, 15, 0.88) 55%,
+    #0f0f0f 100%
+  );
+
+  /* ——— Motion ——— */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-mid: 320ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-mid: 0ms;
+  }
+}
