@@ -9,32 +9,58 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-ink text-snow font-sans antialiased;
+    @apply bg-bg text-white font-sans antialiased;
     font-size: var(--text-base);
-    line-height: var(--leading-normal);
+    line-height: var(--leading-base);
   }
   ::selection {
-    @apply bg-gold text-ink;
+    @apply bg-brand-gold text-black;
   }
 }
 
 @layer utilities {
-  .container-narrow {
+  .container-shell {
     width: min(100% - 2rem, var(--container-max));
     margin-inline: auto;
   }
-  .text-balance {
-    text-wrap: balance;
-  }
+
   .reveal {
     opacity: 0;
     transform: translateY(16px);
     transition:
-      opacity var(--duration-mid) var(--ease-out-expo),
-      transform var(--duration-mid) var(--ease-out-expo);
+      opacity var(--duration-mid) var(--ease-out),
+      transform var(--duration-mid) var(--ease-out);
   }
+
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .glass-card {
+    @apply rounded-card border border-zinc-700 bg-[#121212]/95 p-6 shadow-card backdrop-blur-sm transition duration-300;
+  }
+
+  .glass-card:hover {
+    @apply -translate-y-1 border-zinc-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-gold bg-brand-gold px-5 py-2 text-sm font-semibold text-black transition hover:bg-brand-gold-muted;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-gold-deep bg-zinc-900/40 px-5 py-2 text-sm font-semibold text-brand-gold transition hover:border-brand-gold hover:bg-zinc-800/70;
+  }
+
+  .input-field {
+    @apply rounded-xl border border-zinc-700 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-brand-gold;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
   }
 }
