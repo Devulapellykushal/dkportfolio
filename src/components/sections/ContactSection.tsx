@@ -28,10 +28,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="container-shell py-20 sm:py-24">
-      <div className="glass-card">
+    <section id="contact" className="container-shell py-14 sm:py-24">
+      <div className="glass-card overflow-hidden p-5 sm:p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-brand-gold">Contact</p>
-        <h2 className="mt-3 font-heading text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="mt-3 font-heading text-[1.85rem] font-bold leading-tight text-white sm:text-4xl">
           Let’s build impactful AI products together
         </h2>
         <p className="mt-3 max-w-2xl text-sm text-zinc-300 sm:text-base">
@@ -39,12 +39,15 @@ export function ContactSection() {
         </p>
 
         <div className="mt-5 grid gap-3 text-sm text-zinc-300 sm:grid-cols-2">
-          <p className="inline-flex items-center gap-2">
-            <Phone className="h-4 w-4 text-brand-gold" aria-hidden="true" />
+          <p className="inline-flex items-center gap-2 break-all">
+            <Phone className="h-4 w-4 shrink-0 text-brand-gold" aria-hidden="true" />
             <span>{profile.phone}</span>
           </p>
-          <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-brand-gold">
-            <Mail className="h-4 w-4 text-brand-gold" aria-hidden="true" />
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 break-all hover:text-brand-gold"
+          >
+            <Mail className="h-4 w-4 shrink-0 text-brand-gold" aria-hidden="true" />
             <span>{profile.email}</span>
           </a>
         </div>
@@ -79,20 +82,20 @@ export function ContactSection() {
             onChange={(event) => setDetails(event.target.value)}
             required
           />
-          <button type="submit" className="btn-primary inline-flex items-center gap-2 sm:w-fit">
+          <button type="submit" className="btn-primary inline-flex w-full items-center justify-center gap-2 sm:w-fit">
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             Send on WhatsApp
           </button>
         </form>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a href={`mailto:${profile.email}`} className="btn-secondary inline-flex items-center gap-2">
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
+          <a href={`mailto:${profile.email}`} className="btn-secondary inline-flex w-full items-center justify-center gap-2 sm:w-auto">
             <Mail className="h-4 w-4" aria-hidden="true" />
             Email Me
           </a>
           <a
             href="https://linkedin.com/in/devulapellykushal"
-            className="btn-secondary inline-flex items-center gap-2"
+            className="btn-secondary inline-flex w-full items-center justify-center gap-2 sm:w-auto"
             target="_blank"
             rel="noreferrer"
           >
@@ -101,7 +104,7 @@ export function ContactSection() {
           </a>
           <a
             href="https://wa.me/916309251113?text=Hi%20Kushal%2C%20I%20came%20through%20your%20portfolio%20website."
-            className="btn-secondary inline-flex items-center gap-2"
+            className="btn-secondary inline-flex w-full items-center justify-center gap-2 sm:w-auto"
             target="_blank"
             rel="noreferrer"
           >
@@ -110,7 +113,7 @@ export function ContactSection() {
           </a>
           <a
             href="https://github.com/DevulapellyKushal"
-            className="btn-secondary inline-flex items-center gap-2"
+            className="btn-secondary inline-flex w-full items-center justify-center gap-2 sm:w-auto"
             target="_blank"
             rel="noreferrer"
           >

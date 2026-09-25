@@ -52,12 +52,12 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
   const hasRoles = Boolean(item.roles && item.roles.length > 0);
 
   return (
-    <article className="glass-card relative">
-      <span className="absolute -left-[2.05rem] top-6 h-3 w-3 rounded-full bg-brand-gold shadow-glow-gold" />
-      <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+    <article className="glass-card relative overflow-hidden">
+      <span className="absolute -left-[1.55rem] top-6 h-2.5 w-2.5 rounded-full bg-brand-gold shadow-glow-gold sm:-left-[2.05rem] sm:h-3 sm:w-3" />
+      <p className="break-words text-[0.65rem] uppercase tracking-[0.16em] text-zinc-400 sm:text-xs sm:tracking-[0.2em]">
         {experienceMeta([item.period, item.employmentType, item.location, item.workMode])}
       </p>
-      <h3 className="mt-2 font-heading text-2xl text-white">{item.role}</h3>
+      <h3 className="mt-2 font-heading text-xl text-white sm:text-2xl">{item.role}</h3>
       <p className="text-sm text-brand-gold">{item.company}</p>
       {item.tagline ? <p className="mt-2 text-sm text-zinc-300">{item.tagline}</p> : null}
 
@@ -117,7 +117,7 @@ export function ExperienceSection() {
       title="Built in production, not prototypes"
       description="Delivery history across Node-Zero Labs, ApexNeural, Symbiotes, and NIT Warangal — from RL infrastructure to forward-deployed AI solutions."
     >
-      <div className="relative space-y-8 border-l border-brand-gold-deep pl-6">
+      <div className="relative space-y-6 border-l border-brand-gold-deep pl-4 sm:space-y-8 sm:pl-6">
         {experiences.map((item) => (
           <ExperienceCard key={`${item.company}-${item.role}`} item={item} />
         ))}

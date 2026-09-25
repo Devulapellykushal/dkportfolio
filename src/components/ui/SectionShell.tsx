@@ -12,10 +12,10 @@ export function SectionShell({ id, eyebrow, title, description, children }: Sect
   const { ref, isVisible } = useReveal<HTMLElement>();
 
   return (
-    <section id={id} ref={ref} className={`container-shell py-20 sm:py-24 reveal ${isVisible ? "is-visible" : ""}`}>
-      <div className="mb-10 space-y-4">
+    <section id={id} ref={ref} className={`container-shell py-14 sm:py-24 reveal ${isVisible ? "is-visible" : ""}`}>
+      <div className="mb-8 space-y-3 sm:mb-10 sm:space-y-4">
         {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-gold">{eyebrow}</p> : null}
-        <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">{title}</h2>
+        <h2 className="font-heading text-[1.85rem] font-bold leading-tight text-white sm:text-4xl">{title}</h2>
         {description ? <p className="max-w-3xl text-sm text-zinc-200 sm:text-base">{description}</p> : null}
       </div>
       {children}

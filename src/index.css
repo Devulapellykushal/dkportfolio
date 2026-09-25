@@ -38,11 +38,11 @@
   }
 
   .glass-card {
-    @apply rounded-card border border-zinc-700 bg-[#121212]/95 p-6 shadow-card backdrop-blur-sm transition duration-300;
+    @apply rounded-card border border-zinc-700 bg-[#121212]/95 p-4 shadow-card backdrop-blur-sm transition duration-300 sm:p-6;
   }
 
   .glass-card:hover {
-    @apply -translate-y-1 border-zinc-500;
+    @apply border-zinc-500 sm:-translate-y-1;
   }
 
   .btn-primary {
@@ -89,16 +89,26 @@
   .deccan-badge {
     display: inline-flex;
     align-items: center;
+    max-width: 100%;
     border-radius: 80px;
     border: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.6rem 1.1rem;
+    padding: 0.55rem 0.9rem;
     font-family: var(--font-meta);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     color: #ffffff;
     backdrop-filter: blur(8px);
+    white-space: normal;
+  }
+
+  @media (min-width: 640px) {
+    .deccan-badge {
+      padding: 0.6rem 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
   }
 
   .deccan-trusted {

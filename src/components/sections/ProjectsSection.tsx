@@ -9,10 +9,10 @@ export function ProjectsSection() {
       title="Enterprise-ready AI products and platforms"
       description="Selected projects focused on measurable impact — Kutum, E2EQA Labs, LawFolks, support automation, voice, OCR, and vision."
     >
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
         {projects.map((project) => (
-          <article key={project.title} className="glass-card group">
-            <h3 className="font-heading text-2xl text-white">{project.title}</h3>
+          <article key={project.title} className="glass-card group overflow-hidden">
+            <h3 className="font-heading text-xl text-white sm:text-2xl">{project.title}</h3>
             <p className="mt-2 text-sm text-zinc-300">{project.description}</p>
             <ul className="mt-4 space-y-2 text-sm text-zinc-300">
               {project.achievements.map((item) => (
@@ -27,18 +27,18 @@ export function ProjectsSection() {
                 </span>
               ))}
             </div>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a href={project.links.live} className="btn-primary text-xs" target="_blank" rel="noreferrer">
+            <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+              <a href={project.links.live} className="btn-primary justify-center text-xs" target="_blank" rel="noreferrer">
                 Live Demo
               </a>
-              <a href={project.links.github} className="btn-secondary text-xs" target="_blank" rel="noreferrer">
+              <a href={project.links.github} className="btn-secondary justify-center text-xs" target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a href={project.links.caseStudy} className="btn-secondary text-xs" target="_blank" rel="noreferrer">
+              <a href={project.links.caseStudy} className="btn-secondary justify-center text-xs" target="_blank" rel="noreferrer">
                 Case Study
               </a>
               {project.links.linkedin ? (
-                <a href={project.links.linkedin} className="btn-secondary text-xs" target="_blank" rel="noreferrer">
+                <a href={project.links.linkedin} className="btn-secondary justify-center text-xs" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               ) : null}
