@@ -32,7 +32,11 @@ export function buildPersonSchema(): JsonLd {
     knowsAbout: [
       "Large Language Models",
       "Agentic Workflows",
+      "RL Environments",
+      "Training Data",
+      "Evaluations",
       "FastAPI",
+      "NestJS",
       "React",
       "RAG Systems",
       "OCR Pipelines",

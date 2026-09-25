@@ -1,14 +1,23 @@
 import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { navItems } from "@/data/portfolio";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const primaryItems = navItems;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-gold-deep bg-black/80 backdrop-blur-xl">
-      <nav className="container-shell flex h-16 items-center justify-between gap-4">
+    <header
+      className={
+        isHome
+          ? "absolute inset-x-0 top-0 z-50 border-b border-transparent bg-transparent"
+          : "sticky top-0 z-50 border-b border-brand-gold-deep bg-black/80 backdrop-blur-xl"
+      }
+    >
+      <nav className="container-shell flex h-[4.25rem] items-center justify-between gap-4">
         <Link to="/" className="shrink-0" aria-label="Devulapelly Kushal home">
           <img
             src="/Logo_dark.png"
@@ -21,25 +30,30 @@ export function Navbar() {
         </Link>
 
         <button
-          className="rounded-md border border-brand-gold-deep px-3 py-2 text-xs text-brand-gold md:hidden"
+          className="rounded-[2px] border border-white/20 px-3 py-2 text-xs text-[#f6f3f0] md:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation menu"
         >
           Menu
         </button>
 
-        <ul className="hidden items-center gap-5 lg:gap-6 md:flex">
+        <ul className="hidden items-center gap-6 md:flex lg:gap-8">
           {primaryItems.map((item) => (
             <li key={item.href}>
               {item.href.includes("#") ? (
-                <Link to={item.href} className="text-sm font-medium text-zinc-300 transition hover:text-brand-gold">
+                <Link
+                  to={item.href}
+                  className="font-meta text-[0.8125rem] font-medium text-[#f6f3f0]/85 transition hover:text-white"
+                >
                   {item.label}
                 </Link>
               ) : (
                 <NavLink
                   to={item.href}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition ${isActive ? "text-brand-gold" : "text-zinc-300 hover:text-brand-gold"}`
+                    `font-meta text-[0.8125rem] font-medium transition ${
+                      isActive ? "text-white" : "text-[#f6f3f0]/85 hover:text-white"
+                    }`
                   }
                 >
                   {item.label}
@@ -48,21 +62,30 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+
+        <a href="/contact" className="btn-primary hidden md:inline-flex">
+          Contact
+          <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
       </nav>
 
       {open ? (
-        <ul className="container-shell flex flex-col gap-4 border-t border-brand-gold-deep py-4 md:hidden">
+        <ul className="container-shell flex flex-col gap-4 border-t border-white/10 bg-black/80 py-4 backdrop-blur-xl md:hidden">
           {primaryItems.map((item) => (
             <li key={item.href}>
               {item.href.includes("#") ? (
-                <Link to={item.href} className="text-sm font-medium text-zinc-300 hover:text-brand-gold" onClick={() => setOpen(false)}>
+                <Link
+                  to={item.href}
+                  className="font-meta text-sm font-medium text-[#f6f3f0]"
+                  onClick={() => setOpen(false)}
+                >
                   {item.label}
                 </Link>
               ) : (
                 <NavLink
                   to={item.href}
                   className={({ isActive }) =>
-                    `text-sm font-medium ${isActive ? "text-brand-gold" : "text-zinc-300 hover:text-brand-gold"}`
+                    `font-meta text-sm font-medium ${isActive ? "text-white" : "text-[#f6f3f0]/85"}`
                   }
                   onClick={() => setOpen(false)}
                 >
@@ -71,6 +94,12 @@ export function Navbar() {
               )}
             </li>
           ))}
+          <li>
+            <a href="/contact" className="btn-primary" onClick={() => setOpen(false)}>
+              Contact
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </li>
         </ul>
       ) : null}
     </header>

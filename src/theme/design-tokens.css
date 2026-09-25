@@ -1,29 +1,36 @@
 :root {
-  --color-bg: #0f0f0f;
-  --color-surface: #161616;
-  --color-white: #ffffff;
-  --color-gold: #2a90f2;
-  --color-gold-muted: #53aeff;
-  --color-gold-deep: #0f66c7;
-  --color-muted: #a1a1aa;
+  /* Deccan-aligned brand tokens */
+  --color-bg: #121314;
+  --color-surface: #1a1b1d;
+  --color-ink: #02071a;
+  --color-cream: #f6f3f0;
+  --color-white: #f6f3f0;
+  --color-gold: #f6f3f0;
+  --color-gold-muted: #ffffff;
+  --color-gold-deep: rgba(246, 243, 240, 0.18);
+  --color-muted: rgba(246, 243, 240, 0.7);
 
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Deccan stack: Seasonmix (display) → Instrument Serif legal match;
+     Instrument Sans + Inter for UI/meta */
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Instrument Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-meta: "Inter", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --text-base: 1rem;
-  --leading-base: 1.65;
-  --radius-card: 1rem;
+  --text-base: 0.875rem;
+  --leading-base: 1.4;
+  --radius-card: 0.75rem;
+  --radius-cta: 2px;
 
   --container-max: 76rem;
   --shadow-card: 0 12px 42px rgba(0, 0, 0, 0.38);
-  --shadow-glow-gold:
-    0 0 24px rgba(42, 144, 242, 0.28),
-    0 8px 24px rgba(10, 63, 134, 0.24);
+  --shadow-glow-gold: 0 0 24px rgba(246, 243, 240, 0.12);
 
-  --gradient-border: linear-gradient(130deg, rgba(83, 174, 255, 0.5), rgba(15, 102, 199, 0.38));
+  --gradient-border: linear-gradient(130deg, rgba(246, 243, 240, 0.35), rgba(246, 243, 240, 0.08));
   --gradient-hero:
-    radial-gradient(circle at 15% 20%, rgba(83, 174, 255, 0.2), transparent 40%),
-    radial-gradient(circle at 82% 35%, rgba(15, 102, 199, 0.2), transparent 42%);
+    linear-gradient(180deg, rgba(2, 7, 26, 0.45) 0%, rgba(18, 19, 20, 0.35) 40%, rgba(18, 19, 20, 0.95) 100%),
+    radial-gradient(ellipse 42% 78% at 22% -8%, rgba(120, 210, 255, 0.45), transparent 62%),
+    radial-gradient(ellipse 28% 55% at 38% 8%, rgba(180, 230, 255, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 78% 18%, rgba(255, 120, 70, 0.14), transparent 60%);
 
   --duration-fast: 180ms;
   --duration-mid: 320ms;
@@ -50,5 +57,5 @@ body,
 body {
   margin: 0;
   background: var(--color-bg);
-  color: var(--color-white);
+  color: var(--color-cream);
 }

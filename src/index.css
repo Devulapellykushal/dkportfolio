@@ -46,11 +46,29 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-gold bg-brand-gold px-5 py-2 text-sm font-semibold text-black transition hover:bg-brand-gold-muted;
+    @apply inline-flex items-center justify-center gap-2 border px-4 py-2 text-sm font-medium transition;
+    border-radius: var(--radius-cta);
+    background: var(--color-cream);
+    border-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  .btn-primary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-gold-deep bg-zinc-900/40 px-5 py-2 text-sm font-semibold text-brand-gold transition hover:border-brand-gold hover:bg-zinc-800/70;
+    @apply inline-flex items-center justify-center gap-2 border px-4 py-2 text-sm font-medium transition;
+    border-radius: var(--radius-cta);
+    background: rgba(246, 243, 240, 0.05);
+    border-color: rgba(246, 243, 240, 0.28);
+    color: var(--color-cream);
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(246, 243, 240, 0.55);
+    background: rgba(246, 243, 240, 0.1);
   }
 
   .input-field {
@@ -59,8 +77,34 @@
 
   .hero-grid {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 44px 44px;
+  }
+
+  .font-meta {
+    font-family: var(--font-meta);
+  }
+
+  .deccan-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 1.1rem;
+    font-family: var(--font-meta);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+  }
+
+  .deccan-trusted {
+    font-family: var(--font-meta);
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    color: rgba(246, 243, 240, 0.82);
   }
 }

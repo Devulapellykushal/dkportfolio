@@ -12,9 +12,11 @@ export const pageSeo: Record<string, PageSeoMeta> = {
   "/": {
     title: "AI Engineer Portfolio | Devulapelly Kushal Kumar Reddy",
     description:
-      "AI-first full-stack engineer delivering production LLM systems, automation platforms, and measurable business outcomes.",
+      "AI-first full-stack engineer and Node-Zero Labs founder delivering RL environments, LLM systems, automation platforms, and measurable product outcomes.",
     keywords: [
       "AI Engineer Hyderabad",
+      "Node-Zero Labs",
+      "RL Environments",
       "LLM Orchestration Engineer",
       "Agentic Workflow Developer",
       "FastAPI React Portfolio",
@@ -26,9 +28,11 @@ export const pageSeo: Record<string, PageSeoMeta> = {
   "/projects": {
     title: "AI and SaaS Projects | Devulapelly Kushal",
     description:
-      "Explore enterprise AI and SaaS project case studies covering support automation, OCR intelligence, voice AI, and multi-agent systems.",
+      "Explore AI and SaaS project case studies covering Kutum family ops, LawFolks legal agentic AI, support automation, OCR, voice AI, and vision systems.",
     keywords: [
       "AI projects portfolio",
+      "Kutum family app",
+      "LawFolks legal AI",
       "RAG project case studies",
       "Voice AI platform",
       "OCR automation project",
@@ -39,12 +43,14 @@ export const pageSeo: Record<string, PageSeoMeta> = {
   "/experience": {
     title: "Experience and Leadership | Devulapelly Kushal",
     description:
-      "Professional experience building production AI systems, reliability-focused delivery workflows, and measurable engineering outcomes.",
+      "Experience across Node-Zero Labs, ApexNeural (Context → Solutions → Forward Deployed), Symbiotes, and NIT Warangal.",
     keywords: [
       "AI engineer experience",
+      "Node-Zero Labs founder",
+      "Forward Deployed Engineer",
+      "ApexNeural",
+      "RL environments",
       "production LLM systems",
-      "backend automation experience",
-      "engineering leadership portfolio",
     ],
     canonicalPath: "/experience",
   },

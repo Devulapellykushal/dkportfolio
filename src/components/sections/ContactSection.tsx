@@ -1,5 +1,7 @@
 import { FormEvent, useState } from "react";
-import { profile, socialLinks } from "@/data/portfolio";
+import { Mail, Phone, MessageCircle } from "lucide-react";
+import { profile } from "@/data/portfolio";
+import { GitHubIcon, LinkedInIcon } from "@/components/ui/SocialIconLinks";
 
 export function ContactSection() {
   const [name, setName] = useState("");
@@ -36,9 +38,15 @@ export function ContactSection() {
           Open for AI engineering roles, consulting engagements, and collaboration opportunities.
         </p>
 
-        <div className="mt-5 grid gap-2 text-sm text-zinc-300 sm:grid-cols-2">
-          <p>Phone: {profile.phone}</p>
-          <p>Email: {profile.email}</p>
+        <div className="mt-5 grid gap-3 text-sm text-zinc-300 sm:grid-cols-2">
+          <p className="inline-flex items-center gap-2">
+            <Phone className="h-4 w-4 text-brand-gold" aria-hidden="true" />
+            <span>{profile.phone}</span>
+          </p>
+          <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-brand-gold">
+            <Mail className="h-4 w-4 text-brand-gold" aria-hidden="true" />
+            <span>{profile.email}</span>
+          </a>
         </div>
 
         <form className="mt-8 grid gap-3 sm:grid-cols-2" onSubmit={handleWhatsAppSubmit}>
@@ -71,34 +79,44 @@ export function ContactSection() {
             onChange={(event) => setDetails(event.target.value)}
             required
           />
-          <button type="submit" className="btn-primary sm:w-fit">
+          <button type="submit" className="btn-primary inline-flex items-center gap-2 sm:w-fit">
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
             Send on WhatsApp
           </button>
         </form>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href={`mailto:${profile.email}`} className="btn-secondary">
+          <a href={`mailto:${profile.email}`} className="btn-secondary inline-flex items-center gap-2">
+            <Mail className="h-4 w-4" aria-hidden="true" />
             Email Me
           </a>
-          <a href="https://linkedin.com/in/devulapellykushal" className="btn-secondary" target="_blank" rel="noreferrer">
+          <a
+            href="https://linkedin.com/in/devulapellykushal"
+            className="btn-secondary inline-flex items-center gap-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon className="h-4 w-4" />
             Connect on LinkedIn
           </a>
           <a
             href="https://wa.me/916309251113?text=Hi%20Kushal%2C%20I%20came%20through%20your%20portfolio%20website."
-            className="btn-secondary"
+            className="btn-secondary inline-flex items-center gap-2"
             target="_blank"
             rel="noreferrer"
           >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
             WhatsApp
           </a>
-        </div>
-
-        <div className="mt-5 flex flex-wrap gap-4">
-          {socialLinks.map((social) => (
-            <a key={social.label} href={social.href} className="text-sm text-zinc-400 hover:text-brand-gold">
-              {social.label}
-            </a>
-          ))}
+          <a
+            href="https://github.com/DevulapellyKushal"
+            className="btn-secondary inline-flex items-center gap-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon className="h-4 w-4" />
+            GitHub
+          </a>
         </div>
       </div>
     </section>

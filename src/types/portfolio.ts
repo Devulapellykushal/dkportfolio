@@ -8,14 +8,36 @@ export interface SocialLink {
   href: string;
 }
 
+export interface ExperienceLink {
+  label: string;
+  href: string;
+}
+
+export interface ExperienceRole {
+  title: string;
+  period: string;
+  location: string;
+  workMode?: string;
+  summary?: string;
+  highlights: string[];
+  technologies?: string[];
+  links?: ExperienceLink[];
+}
+
 export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
   location: string;
+  employmentType?: string;
+  workMode?: string;
   highlights: string[];
   technologies: string[];
+  tagline?: string;
+  roles?: ExperienceRole[];
   certificateUrl?: string;
+  url?: string;
+  urlLabel?: string;
 }
 
 export interface TechCategory {
@@ -34,6 +56,7 @@ export interface Project {
     live: string;
     github: string;
     caseStudy: string;
+    linkedin?: string;
   };
 }
 
@@ -74,4 +97,13 @@ export interface EducationItem {
 export interface FAQItem {
   question: string;
   answer: string;
+}
+
+export interface EntrepreneurshipVenture {
+  heading: string;
+  period: string;
+  tagline?: string;
+  points: string[];
+  url: string;
+  linkLabel: string;
 }

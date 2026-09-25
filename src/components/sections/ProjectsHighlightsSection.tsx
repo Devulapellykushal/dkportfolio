@@ -2,17 +2,19 @@ import { Link } from "react-router-dom";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { projects } from "@/data/portfolio";
 
-const HIGHLIGHT_COUNT = 2;
+const HIGHLIGHT_TITLES = ["Kutum – Family Information OS", "E2EQA Labs"] as const;
 
 export function ProjectsHighlightsSection() {
-  const highlights = projects.slice(0, HIGHLIGHT_COUNT);
+  const highlights = HIGHLIGHT_TITLES.map((title) => projects.find((project) => project.title === title)).filter(
+    (project) => project !== undefined,
+  );
 
   return (
     <SectionShell
       id="projects-highlights"
       eyebrow="Projects Highlights"
       title="Selected project outcomes"
-      description="A quick look at two key projects. Open the full projects page for complete case studies."
+      description="A quick look at Kutum and E2EQA Labs from ApexNeural. Open the full projects page for complete case studies."
     >
       <div className="grid gap-5 lg:grid-cols-2">
         {highlights.map((project) => (

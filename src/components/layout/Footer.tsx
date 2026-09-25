@@ -1,4 +1,4 @@
-import { socialLinks } from "@/data/portfolio";
+import { SocialIconLinks } from "@/components/ui/SocialIconLinks";
 
 export function Footer() {
   return (
@@ -14,15 +14,8 @@ export function Footer() {
             loading="lazy"
             decoding="async"
           />
-          {/* <p className="text-sm text-zinc-400">AI Engineer and Full Stack Developer portfolio.</p> */}
         </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-          {socialLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm text-zinc-300 hover:text-brand-gold">
-              {link.label}
-            </a>
-          ))}
-        </div>
+        <SocialIconLinks className="flex flex-wrap items-center gap-3" />
       </div>
       <p className="container-shell mt-6 border-t border-zinc-800 pt-5 text-center text-xs text-zinc-500">
         © {new Date().getFullYear()} Devulapelly Kushal Kumar Reddy.{" "}

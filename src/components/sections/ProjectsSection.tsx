@@ -7,7 +7,7 @@ export function ProjectsSection() {
       id="projects"
       eyebrow="Projects"
       title="Enterprise-ready AI products and platforms"
-      description="Selected projects focused on measurable impact, platform reliability, and practical AI adoption."
+      description="Selected projects focused on measurable impact — Kutum, E2EQA Labs, LawFolks, support automation, voice, OCR, and vision."
     >
       <div className="grid gap-5 lg:grid-cols-2">
         {projects.map((project) => (
@@ -37,6 +37,11 @@ export function ProjectsSection() {
               <a href={project.links.caseStudy} className="btn-secondary text-xs" target="_blank" rel="noreferrer">
                 Case Study
               </a>
+              {project.links.linkedin ? (
+                <a href={project.links.linkedin} className="btn-secondary text-xs" target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+              ) : null}
             </div>
           </article>
         ))}

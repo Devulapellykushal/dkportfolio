@@ -14,8 +14,9 @@ export default {
         muted: "var(--color-muted)",
       },
       fontFamily: {
-        heading: ["var(--font-display)", "sans-serif"],
+        heading: ["var(--font-display)", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        meta: ["var(--font-meta)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         card: "var(--shadow-card)",

@@ -3,7 +3,7 @@ export const seoConfig = {
   siteUrl: "https://devulapellykushal.vercel.app",
   defaultTitle: "Devulapelly Kushal Kumar Reddy | AI Engineer Portfolio",
   defaultDescription:
-    "AI engineer portfolio focused on LLM orchestration, full-stack product delivery, and production-grade agentic workflows.",
+    "Founder of Node-Zero Labs and Forward Deployed Engineer at ApexNeural — focused on RL environments, agentic AI, and production-grade product delivery.",
   defaultOgImage: "https://devulapellykushal.vercel.app/favicondark.png",
   author: "Devulapelly Kushal Kumar Reddy",
   locale: "en_IN",
@@ -19,7 +19,7 @@ export const seoConfig = {
   },
   person: {
     name: "Devulapelly Kushal Kumar Reddy",
-    jobTitle: "AI Engineer",
+    jobTitle: "Founder, Node-Zero Labs · Forward Deployed Engineer",
     image: "https://devulapellykushal.vercel.app/favicondark.png",
     email: "kushalkumar2506@gmail.com",
     telephone: "+91 6309251113",
